@@ -1,0 +1,25 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git url: 'https://github.com/satman2024/mvnwebapp.git'
+            }
+        }
+        stage('Build') {
+            steps {
+                sh 'mvn clean package'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                deploy adapters: [tomcat8(credentialsId: 'tomcat-credentials', 
+                                          path: 'http://localhost:8083/mvnwebapp/example', 
+                                          url: 'http://localhost:8083')], 
+                       contextPath: 'http://localhost:8083/mvnwebapp', 
+                       war: '**/*.war'
+            }
+        }
+    }
+}
