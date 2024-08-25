@@ -15,5 +15,5 @@ dependencies {
 }
 
 war {
-    archiveFileName = 'my-webapp.war'
+    archiveFileName = 'mvnwebapp.war'
 }
