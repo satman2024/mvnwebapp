@@ -15,5 +15,5 @@ dependencies {
 }
 
 war {
-    archiveFileName = 'mvnwebapp.war'
+    archiveFileName = 'mvnwebapp-1.0-SNAPSHOT.war'
 }
