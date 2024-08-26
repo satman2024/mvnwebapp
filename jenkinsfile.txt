@@ -14,11 +14,15 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                deploy adapters: [tomcat8(credentialsId: 'tomcat-credentials', 
-                                          path: 'http://localhost:8083/mvnwebapp/example', 
-                                          url: 'http://localhost:8083')], 
-                       contextPath: 'http://localhost:8083/mvnwebapp', 
-                       war: '**/*.war'
+                deploy adapters: [
+                    tomcat8(
+                        credentialsId: 'tomcat-credentials', 
+                        path: '',  // Optional, leave blank if deploying to root context
+                        url: 'http://localhost:8083'
+                    )
+                ], 
+                contextPath: '/mvnwebapp',  // Use the context path as expected by Tomcat
+                war: '**/target/*.war'  // Path to the WAR file in your workspace
             }
         }
     }
