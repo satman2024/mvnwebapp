@@ -15,7 +15,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 deploy adapters: [
-                    tomcat8(
+                    tomcat9(
                         credentialsId: 'tomcat-credentials', 
                         path: '',  // Optional, leave blank if deploying to root context
                         url: 'http://localhost:8083'
