@@ -22,7 +22,7 @@ pipeline {
                     )
                 ], 
                 contextPath: '/mvnwebapp',  // Use the context path as expected by Tomcat
-                war: '**/target/*.war'  // Path to the WAR file in your workspace
+                war: '**/*.war'  // Path to the WAR file in your workspace
             }
         }
     }

@@ -3,28 +3,6 @@ plugins {
     id 'war'
 }
 
-group = 'com.example'
-version = '1.0-SNAPSHOT'
-
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    // Add your dependencies here, for example:
-    // implementation 'javax.servlet:javax.servlet-api:4.0.1'
-    // implementation 'org.springframework:spring-web:5.3.13'
-}
-
 war {
-    // Custom name for the WAR file
     archiveFileName = 'mvnwebapp-1.0-SNAPSHOT.war'
-    
-    // Optional: Include additional files or folders in the WAR
-    // from('src/main/webapp') {
-    //     into ''
-    // }
-    
-    // Optional: Define custom web.xml or resources
-    // webXml = file('src/main/webapp/WEB-INF/web.xml')
 }
